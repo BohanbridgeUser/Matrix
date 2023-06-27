@@ -1,0 +1,42 @@
+#ifndef _CSC_SPARSEMATRIX_H_
+#define _CSC_SPARSEMATRIX_H_
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <optional>
+#include "triple_smatrix.h"
+#include "basicfun.h"
+class CSC_SMatrix{
+    private:
+        smi nentries;
+        smi nrow;
+        smi ncol;
+        smi* pcol;
+        smi* irow;
+        double* value;
+    public:
+        /* Basic */
+        CSC_SMatrix();
+        CSC_SMatrix(const Triple_SMatrix& A);
+        CSC_SMatrix(const smi& ne, smi* rows, smi* cols, double* values);
+        ~CSC_SMatrix();
+
+        /* Memory */
+        void* sm_malloc(smi i, size_t size);
+        void* sm_calloc(smi i, size_t size);
+        void sm_free(void* p);
+        void* sm_realloc(void* p, size_t size);
+        //CSC_SMatrix* sm_smalloc(const smi& nr, const smi& nc, const smi& ne, const smi& values);
+        //CSC_SMatrix* sm_resmalloc(CSC_SMatrix& A, const smi& ne);
+
+        /* Mrithmetic */
+        friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
+                            const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
+        
+        /* Utilization */
+        double operator()(const smi& i, const smi& j)const;
+        friend std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc);
+};
+
+#endif
