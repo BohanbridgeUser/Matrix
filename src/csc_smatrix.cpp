@@ -27,27 +27,55 @@ CSC_SMatrix::CSC_SMatrix(const Triple_SMatrix& A)
         pcol[j] = count;
     }
 }
+bool CSC_SMatrix::empty()const
+{
+    return (nentries == 0);
+}
 CSC_SMatrix::~CSC_SMatrix()
 {
     sm_free(pcol);
     sm_free(irow);
     sm_free(value);
 }
-void* CSC_SMatrix::sm_malloc(smi i,size_t size)
+void* CSC_SMatrix::sm_malloc(smi i,size_t size)const
 {
-    return (malloc(CSC_MAX<u_int32_t>(i,1)*size));
+    void* p = (malloc(CSC_MAX<u_int32_t>(i,1)*size));
+    if ( p == NULL ) {
+        std::cerr << "Malloc failed!\n";
+    }
+    return p;
 }
-void* CSC_SMatrix::sm_calloc(smi i,size_t size)
+void* CSC_SMatrix::sm_calloc(smi i,size_t size)const
 {
-    return (calloc(CSC_MAX<u_int32_t>(i,1), size));
+    void* p = (calloc(CSC_MAX<u_int32_t>(i,1), size));
+    if ( p == NULL ) {
+        std::cerr << "Calloc failed!\n";
+    }
+    return p;
 }
-void CSC_SMatrix::sm_free(void* p)
+void CSC_SMatrix::sm_free(void* p)const
 {
     free(p);
 }
 void* CSC_SMatrix::sm_realloc(void* p, size_t size)
 {
-    return (realloc(p,CSC_MAX<size_t>(size,1)));
+    p = (realloc(p,CSC_MAX<size_t>(size,1)));
+    if ( p == NULL ) {
+        std::cerr << "realloc failed!\n";
+    }
+    return p;
+}
+int CSC_SMatrix::cols()const
+{
+    return ncol;
+}
+int CSC_SMatrix::rows()const
+{
+    return nrow;
+}
+int CSC_SMatrix::entries()const
+{
+    return nentries;
 }
 std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc)
 {
@@ -81,5 +109,33 @@ double CSC_SMatrix::operator()(const smi& i, const smi& j)const
             if (irow[x] == i) return value[x];
         }
         return 0.0;
+    }
+}
+double* CSC_SMatrix::sm_gaxpy(const double* x, const double* y)const
+{
+    // Return a vector that Ax + y;
+    if (empty()) {
+        std::cerr << "Empty Matrix!\n";
+        return nullptr;
+    }else if (x == nullptr){
+        std::cerr << "Empty Vector!\n";
+        return nullptr;
+    }else if (y == nullptr){
+        double* ret = (double*)(sm_calloc(nrow,sizeof(double)));
+        for (int j=0;j<ncol;++j) {
+            for (int p=pcol[j];p<pcol[j+1];++p) {
+                ret[irow[p]] += (value[irow[p]] * x[j]);
+            }
+        }
+        return ret;
+    }else {
+        double* ret = (double*)(sm_calloc(nrow,sizeof(double)));
+        for (int k=0;k<nrow;++k) ret[k] = y[k];
+        for (int j=0;j<ncol;++j) {
+            for (int p=pcol[j];p<pcol[j+1];++p) {
+                ret[irow[p]] += (value[irow[p]] * x[j] + y[irow[p]]);
+            }
+        }
+        return ret;
     }
 }

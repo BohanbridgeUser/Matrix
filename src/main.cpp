@@ -127,5 +127,53 @@ int main(int argv, char* argc[])
         }
         std::cout << std::endl;
     }
+
+    /* Gaxpy accese test */
+    std::cout << "*************Gaxpy accese test*******************\n"; 
+    std::cout << "Gaxpy accese test1:\n";
+    double x[] = {2,9,8,6,4,5};
+    double y[] = {0,9,7,3,4};
+    double* t=csc.sm_gaxpy(x,y);
+    for (int i=0;i<csc.rows();++i) {
+        std::cout << t[i] << ' ';
+    }
+    std::cout << std::endl;
+    csc.sm_free(t);
+    std::cout << "Gaxpy accese test2:\n";
+    double x2[] = {10};
+    double y2[] = {30,20,15,23,13,20};
+    t=csc2.sm_gaxpy(x2,y2);
+    for (int i=0;i<csc2.rows();++i) {
+        std::cout << t[i] << ' ';
+    }
+    std::cout << std::endl;
+    csc.sm_free(t);
+    std::cout << "Gaxpy accese test3:\n";
+    double x3[] = {10,11,18,19,20,21,22};
+    double y3[] = {30};
+    t=csc3.sm_gaxpy(x3,y3);
+    for (int i=0;i<csc3.rows();++i) {
+        std::cout << t[i] << ' ';
+    }
+    std::cout << std::endl;
+    csc.sm_free(t);
+    std::cout << "Gaxpy accese test4:\n";
+    double x4[] = {10,11,18,19,20,21};
+    double y4[] = {30,23,42,35};
+    t=csc4.sm_gaxpy(x4,y4);
+    for (int i=0;i<csc4.rows();++i) {
+        std::cout << t[i] << ' ';
+    }
+    std::cout << std::endl;
+    csc.sm_free(t);
+    std::cout << "Gaxpy accese test5:\n";
+    double x5[] = {10,11,18,19,20,21};
+    double y5[] = {30,23,42,35};
+    t=csc5.sm_gaxpy(x5,y5);
+    for (int i=0;i<csc5.rows();++i) {
+        std::cout << t[i] << ' ';
+    }
+    csc.sm_free(t);
+    std::cout << std::endl;
     return 0;
 }
