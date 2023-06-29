@@ -193,5 +193,6 @@ CSC_SMatrix CSC_SMatrix::csc_transpose()
             ret.value[rrow] = value[j];
         }
     }
+    sm_free(p);
     return ret;
 }
