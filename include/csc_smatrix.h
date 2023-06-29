@@ -31,6 +31,7 @@ class CSC_SMatrix{
         void* sm_calloc(smi i, size_t size)const;
         void sm_free(void* p)const;
         void* sm_realloc(void* p, size_t size);
+        bool sm_sprealloc();
         //CSC_SMatrix* sm_smalloc(const smi& nr, const smi& nc, const smi& ne, const smi& values);
         //CSC_SMatrix* sm_resmalloc(CSC_SMatrix& A, const smi& ne);
 
@@ -38,7 +39,6 @@ class CSC_SMatrix{
         double* sm_gaxpy(const double* x, const double* y = nullptr)const;
         CSC_SMatrix csc_transpose();
         CSC_SMatrix csc_sort();
-        CSC_SMatrix csc_duplicate();
         // friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
         //                     const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
         
@@ -46,7 +46,11 @@ class CSC_SMatrix{
         int cols()const;
         int rows()const;
         int entries()const;
+        CSC_SMatrix csc_duplicate();
         double csc_cumsum(int* p, int* c, int n);
+        bool csc_sm_fkeep(bool(*fkeep)(int ,int, double, void*), void* other);
+        friend bool csc_nonzero(int i, int j, double aij, void *other);
+        bool csc_dropzero();
         double operator()(const smi& i, const smi& j)const;
         friend std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc);
 };
