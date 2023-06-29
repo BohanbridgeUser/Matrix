@@ -37,6 +37,8 @@ class CSC_SMatrix{
         /* Mrithmetic */
         double* sm_gaxpy(const double* x, const double* y = nullptr)const;
         CSC_SMatrix csc_transpose();
+        CSC_SMatrix csc_sort();
+        CSC_SMatrix csc_duplicate();
         // friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
         //                     const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
         
