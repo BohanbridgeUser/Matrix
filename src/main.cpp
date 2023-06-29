@@ -128,9 +128,9 @@ int main(int argv, char* argc[])
         std::cout << std::endl;
     }
 
-    /* Gaxpy accese test */
-    std::cout << "*************Gaxpy accese test*******************\n"; 
-    std::cout << "Gaxpy accese test1:\n";
+    /* Gaxpy test */
+    std::cout << "*************Gaxpy test*******************\n"; 
+    std::cout << "Gaxpy test1:\n";
     double x[] = {2,9,8,6,4,5};
     double y[] = {0,9,7,3,4};
     double* t=csc.sm_gaxpy(x,y);
@@ -139,7 +139,7 @@ int main(int argv, char* argc[])
     }
     std::cout << std::endl;
     csc.sm_free(t);
-    std::cout << "Gaxpy accese test2:\n";
+    std::cout << "Gaxpy test2:\n";
     double x2[] = {10};
     double y2[] = {30,20,15,23,13,20};
     t=csc2.sm_gaxpy(x2,y2);
@@ -148,7 +148,7 @@ int main(int argv, char* argc[])
     }
     std::cout << std::endl;
     csc.sm_free(t);
-    std::cout << "Gaxpy accese test3:\n";
+    std::cout << "Gaxpy test3:\n";
     double x3[] = {10,11,18,19,20,21,22};
     double y3[] = {30};
     t=csc3.sm_gaxpy(x3,y3);
@@ -157,7 +157,7 @@ int main(int argv, char* argc[])
     }
     std::cout << std::endl;
     csc.sm_free(t);
-    std::cout << "Gaxpy accese test4:\n";
+    std::cout << "Gaxpy test4:\n";
     double x4[] = {10,11,18,19,20,21};
     double y4[] = {30,23,42,35};
     t=csc4.sm_gaxpy(x4,y4);
@@ -166,7 +166,7 @@ int main(int argv, char* argc[])
     }
     std::cout << std::endl;
     csc.sm_free(t);
-    std::cout << "Gaxpy accese test5:\n";
+    std::cout << "Gaxpy test5:\n";
     double x5[] = {10,11,18,19,20,21};
     double y5[] = {30,23,42,35};
     t=csc5.sm_gaxpy(x5,y5);
@@ -175,5 +175,11 @@ int main(int argv, char* argc[])
     }
     csc.sm_free(t);
     std::cout << std::endl;
+
+    /* Transpose test */
+    std::cout << "*************Transpose test*******************\n"; 
+    std::cout << "Transpose test1:\n";
+    CSC_SMatrix csct = csc.csc_transpose();
+    std::cout << csct << std::endl;
     return 0;
 }

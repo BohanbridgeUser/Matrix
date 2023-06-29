@@ -4,6 +4,12 @@ CSC_SMatrix::CSC_SMatrix():nentries(0),nrow(0),ncol(0),pcol(nullptr),irow(nullpt
 {
 
 }
+CSC_SMatrix::CSC_SMatrix(const int row, const int col, const int ne):nentries(ne),nrow(row),ncol(col)
+{
+    pcol = (smi*)sm_calloc(col+1,sizeof(smi));
+    irow = (smi*)sm_calloc(row,sizeof(smi));
+    value = (double*)sm_calloc(ne,sizeof(double));
+}
 CSC_SMatrix::CSC_SMatrix(const Triple_SMatrix& A)
 {
     /* A is arranged by col values */
@@ -39,7 +45,7 @@ CSC_SMatrix::~CSC_SMatrix()
 }
 void* CSC_SMatrix::sm_malloc(smi i,size_t size)const
 {
-    void* p = (malloc(CSC_MAX<u_int32_t>(i,1)*size));
+    void* p = (malloc(CSC_MAX<uint32_t>(i,1)*size));
     if ( p == NULL ) {
         std::cerr << "Malloc failed!\n";
     }
@@ -47,7 +53,7 @@ void* CSC_SMatrix::sm_malloc(smi i,size_t size)const
 }
 void* CSC_SMatrix::sm_calloc(smi i,size_t size)const
 {
-    void* p = (calloc(CSC_MAX<u_int32_t>(i,1), size));
+    void* p = (calloc(CSC_MAX<uint32_t>(i,1), size));
     if ( p == NULL ) {
         std::cerr << "Calloc failed!\n";
     }
@@ -111,6 +117,19 @@ double CSC_SMatrix::operator()(const smi& i, const smi& j)const
         return 0.0;
     }
 }
+double CSC_SMatrix::csc_cumsum(smi* p, smi* c, smi n)
+{
+    smi nz = 0;
+    double nz2 = 0.0;
+    for (int i=0;i<n;++i) {
+        p[i] = nz;
+        nz += c[i];
+        nz2 += c[i];
+        c[i] = p[i];
+    }
+    p[n] = nz;
+    return nz2;
+}
 double* CSC_SMatrix::sm_gaxpy(const double* x, const double* y)const
 {
     // Return a vector that Ax + y;
@@ -138,4 +157,21 @@ double* CSC_SMatrix::sm_gaxpy(const double* x, const double* y)const
         }
         return ret;
     }
+}
+CSC_SMatrix CSC_SMatrix::csc_transpose()
+{
+    smi *Cp,*Ci,*Cx;
+    if (empty()) return CSC_SMatrix();
+    CSC_SMatrix ret(nrow,ncol,nentries);
+    smi* p = (smi*)sm_calloc(nrow,sizeof(smi));
+    for (int i=0;i<nentries;++i) p[irow[i]]++;
+    csc_cumsum(ret.pcol,p,nrow);
+    for (int i=0;i<ncol;++i) {
+        for (int j=pcol[i];j<pcol[i+1];++j) {
+            smi rrow = p[irow[j]]++;
+            ret.irow[rrow] = i;
+            ret.value[rrow] = value[j];
+        }
+    }
+    return ret;
 }

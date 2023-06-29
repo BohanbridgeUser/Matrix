@@ -19,6 +19,7 @@ class CSC_SMatrix{
     public:
         /* Basic */
         CSC_SMatrix();
+        CSC_SMatrix(const int row, const int col, const int ne);
         CSC_SMatrix(const Triple_SMatrix& A);
         CSC_SMatrix(const smi& ne, smi* rows, smi* cols, double* values);
         ~CSC_SMatrix();
@@ -33,6 +34,7 @@ class CSC_SMatrix{
 
         /* Mrithmetic */
         double* sm_gaxpy(const double* x, const double* y = nullptr)const;
+        CSC_SMatrix csc_transpose();
         // friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
         //                     const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
         
@@ -40,6 +42,7 @@ class CSC_SMatrix{
         int cols()const;
         int rows()const;
         int entries()const;
+        double csc_cumsum(int* p, int* c, int n);
         double operator()(const smi& i, const smi& j)const;
         friend std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc);
 };
