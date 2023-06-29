@@ -129,6 +129,126 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/csc_cumsum.o: src/csc_cumsum.cpp.o
+.PHONY : src/csc_cumsum.o
+
+# target to build an object file
+src/csc_cumsum.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_cumsum.cpp.o
+.PHONY : src/csc_cumsum.cpp.o
+
+src/csc_cumsum.i: src/csc_cumsum.cpp.i
+.PHONY : src/csc_cumsum.i
+
+# target to preprocess a source file
+src/csc_cumsum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_cumsum.cpp.i
+.PHONY : src/csc_cumsum.cpp.i
+
+src/csc_cumsum.s: src/csc_cumsum.cpp.s
+.PHONY : src/csc_cumsum.s
+
+# target to generate assembly for a file
+src/csc_cumsum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_cumsum.cpp.s
+.PHONY : src/csc_cumsum.cpp.s
+
+src/csc_duplicate.o: src/csc_duplicate.cpp.o
+.PHONY : src/csc_duplicate.o
+
+# target to build an object file
+src/csc_duplicate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_duplicate.cpp.o
+.PHONY : src/csc_duplicate.cpp.o
+
+src/csc_duplicate.i: src/csc_duplicate.cpp.i
+.PHONY : src/csc_duplicate.i
+
+# target to preprocess a source file
+src/csc_duplicate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_duplicate.cpp.i
+.PHONY : src/csc_duplicate.cpp.i
+
+src/csc_duplicate.s: src/csc_duplicate.cpp.s
+.PHONY : src/csc_duplicate.s
+
+# target to generate assembly for a file
+src/csc_duplicate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_duplicate.cpp.s
+.PHONY : src/csc_duplicate.cpp.s
+
+src/csc_memory.o: src/csc_memory.cpp.o
+.PHONY : src/csc_memory.o
+
+# target to build an object file
+src/csc_memory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_memory.cpp.o
+.PHONY : src/csc_memory.cpp.o
+
+src/csc_memory.i: src/csc_memory.cpp.i
+.PHONY : src/csc_memory.i
+
+# target to preprocess a source file
+src/csc_memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_memory.cpp.i
+.PHONY : src/csc_memory.cpp.i
+
+src/csc_memory.s: src/csc_memory.cpp.s
+.PHONY : src/csc_memory.s
+
+# target to generate assembly for a file
+src/csc_memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_memory.cpp.s
+.PHONY : src/csc_memory.cpp.s
+
+src/csc_sm_fkeep.o: src/csc_sm_fkeep.cpp.o
+.PHONY : src/csc_sm_fkeep.o
+
+# target to build an object file
+src/csc_sm_fkeep.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o
+.PHONY : src/csc_sm_fkeep.cpp.o
+
+src/csc_sm_fkeep.i: src/csc_sm_fkeep.cpp.i
+.PHONY : src/csc_sm_fkeep.i
+
+# target to preprocess a source file
+src/csc_sm_fkeep.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.i
+.PHONY : src/csc_sm_fkeep.cpp.i
+
+src/csc_sm_fkeep.s: src/csc_sm_fkeep.cpp.s
+.PHONY : src/csc_sm_fkeep.s
+
+# target to generate assembly for a file
+src/csc_sm_fkeep.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.s
+.PHONY : src/csc_sm_fkeep.cpp.s
+
+src/csc_sm_gaxpy.o: src/csc_sm_gaxpy.cpp.o
+.PHONY : src/csc_sm_gaxpy.o
+
+# target to build an object file
+src/csc_sm_gaxpy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o
+.PHONY : src/csc_sm_gaxpy.cpp.o
+
+src/csc_sm_gaxpy.i: src/csc_sm_gaxpy.cpp.i
+.PHONY : src/csc_sm_gaxpy.i
+
+# target to preprocess a source file
+src/csc_sm_gaxpy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.i
+.PHONY : src/csc_sm_gaxpy.cpp.i
+
+src/csc_sm_gaxpy.s: src/csc_sm_gaxpy.cpp.s
+.PHONY : src/csc_sm_gaxpy.s
+
+# target to generate assembly for a file
+src/csc_sm_gaxpy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.s
+.PHONY : src/csc_sm_gaxpy.cpp.s
+
 src/csc_smatrix.o: src/csc_smatrix.cpp.o
 .PHONY : src/csc_smatrix.o
 
@@ -152,6 +272,30 @@ src/csc_smatrix.s: src/csc_smatrix.cpp.s
 src/csc_smatrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_smatrix.cpp.s
 .PHONY : src/csc_smatrix.cpp.s
+
+src/csc_transpose.o: src/csc_transpose.cpp.o
+.PHONY : src/csc_transpose.o
+
+# target to build an object file
+src/csc_transpose.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_transpose.cpp.o
+.PHONY : src/csc_transpose.cpp.o
+
+src/csc_transpose.i: src/csc_transpose.cpp.i
+.PHONY : src/csc_transpose.i
+
+# target to preprocess a source file
+src/csc_transpose.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_transpose.cpp.i
+.PHONY : src/csc_transpose.cpp.i
+
+src/csc_transpose.s: src/csc_transpose.cpp.s
+.PHONY : src/csc_transpose.s
+
+# target to generate assembly for a file
+src/csc_transpose.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_transpose.cpp.s
+.PHONY : src/csc_transpose.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -210,9 +354,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/csc_cumsum.o"
+	@echo "... src/csc_cumsum.i"
+	@echo "... src/csc_cumsum.s"
+	@echo "... src/csc_duplicate.o"
+	@echo "... src/csc_duplicate.i"
+	@echo "... src/csc_duplicate.s"
+	@echo "... src/csc_memory.o"
+	@echo "... src/csc_memory.i"
+	@echo "... src/csc_memory.s"
+	@echo "... src/csc_sm_fkeep.o"
+	@echo "... src/csc_sm_fkeep.i"
+	@echo "... src/csc_sm_fkeep.s"
+	@echo "... src/csc_sm_gaxpy.o"
+	@echo "... src/csc_sm_gaxpy.i"
+	@echo "... src/csc_sm_gaxpy.s"
 	@echo "... src/csc_smatrix.o"
 	@echo "... src/csc_smatrix.i"
 	@echo "... src/csc_smatrix.s"
+	@echo "... src/csc_transpose.o"
+	@echo "... src/csc_transpose.i"
+	@echo "... src/csc_transpose.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

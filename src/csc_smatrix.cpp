@@ -63,34 +63,6 @@ CSC_SMatrix::~CSC_SMatrix()
     sm_free(irow);
     sm_free(value);
 }
-void* CSC_SMatrix::sm_malloc(smi i,size_t size)const
-{
-    void* p = (malloc(CSC_MAX<uint32_t>(i,1)*size));
-    if ( p == NULL ) {
-        std::cerr << "Malloc failed!\n";
-    }
-    return p;
-}
-void* CSC_SMatrix::sm_calloc(smi i,size_t size)const
-{
-    void* p = (calloc(CSC_MAX<uint32_t>(i,1), size));
-    if ( p == NULL ) {
-        std::cerr << "Calloc failed!\n";
-    }
-    return p;
-}
-void CSC_SMatrix::sm_free(void* p)const
-{
-    free(p);
-}
-void* CSC_SMatrix::sm_realloc(void* p, size_t size)
-{
-    p = (realloc(p,CSC_MAX<size_t>(size,1)));
-    if ( p == NULL ) {
-        std::cerr << "realloc failed!\n";
-    }
-    return p;
-}
 int CSC_SMatrix::cols()const
 {
     return ncol;
@@ -137,92 +109,5 @@ double CSC_SMatrix::operator()(const smi& i, const smi& j)const
         return 0.0;
     }
 }
-double CSC_SMatrix::csc_cumsum(smi* p, smi* c, smi n)
-{
-    smi nz = 0;
-    double nz2 = 0.0;
-    for (int i=0;i<n;++i) {
-        p[i] = nz;
-        nz += c[i];
-        nz2 += c[i];
-        c[i] = p[i];
-    }
-    p[n] = nz;
-    return nz2;
-}
-double* CSC_SMatrix::sm_gaxpy(const double* x, const double* y)const
-{
-    // Return a vector that Ax + y;
-    if (empty()) {
-        std::cerr << "Empty Matrix!\n";
-        return nullptr;
-    }else if (x == nullptr){
-        std::cerr << "Empty Vector!\n";
-        return nullptr;
-    }else if (y == nullptr){
-        double* ret = (double*)(sm_calloc(nrow,sizeof(double)));
-        for (int j=0;j<ncol;++j) {
-            for (int p=pcol[j];p<pcol[j+1];++p) {
-                ret[irow[p]] += (value[irow[p]] * x[j]);
-            }
-        }
-        return ret;
-    }else {
-        double* ret = (double*)(sm_calloc(nrow,sizeof(double)));
-        for (int k=0;k<nrow;++k) ret[k] = y[k];
-        for (int j=0;j<ncol;++j) {
-            for (int p=pcol[j];p<pcol[j+1];++p) {
-                ret[irow[p]] += (value[irow[p]] * x[j] + y[irow[p]]);
-            }
-        }
-        return ret;
-    }
-}
-CSC_SMatrix CSC_SMatrix::csc_transpose()
-{
-    smi *Cp,*Ci,*Cx;
-    if (empty()) return CSC_SMatrix();
-    CSC_SMatrix ret(ncol,nrow,nentries);
-    smi* p = (smi*)sm_calloc(nrow,sizeof(smi));
-    for (int i=0;i<nentries;++i) p[irow[i]]++;
-    csc_cumsum(ret.pcol,p,nrow);
-    for (int i=0;i<ncol;++i) {
-        for (int j=pcol[i];j<pcol[i+1];++j) {
-            smi rrow = p[irow[j]]++;
-            ret.irow[rrow] = i;
-            ret.value[rrow] = value[j];
-        }
-    }
-    sm_free(p);
-    return ret;
-}
-CSC_SMatrix CSC_SMatrix::csc_sort()
-{
-    if(empty()) return CSC_SMatrix();
-    else {
-        return (this->csc_transpose().csc_transpose());
-    }
-}
-CSC_SMatrix CSC_SMatrix::csc_duplicate()
-{
-    if (empty()) return CSC_SMatrix();
-    smi* w = (smi*)sm_calloc(nrow,sizeof(smi));
-    for (int i=0;i<nrow;++i) w[i] = -1;
-    smi nz = 0, q;
-    for (int j=0;j<ncol;++j) {
-        q = nz;
-        for (int i=pcol[j];i<pcol[j+1];++i) {
-            if (w[irow[i]] >= q) {
-                value[w[irow[i]]] += value[i];
-            }else {
-                w[irow[i]] = nz;
-                irow[nz] = irow[irow[i]];
-                value[nz++] = value[i];
-            }
-        }
-        pcol[j] = nz;
-    }
-    pcol[ncol] = nz;
-    sm_free(w);
-    return *this;
-}
+
+

@@ -69,24 +69,80 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/main.cpp.o: /home/zbh/Desktop/Matrix/src/main.cpp
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /home/zbh/Desktop/Matrix/src/main.cpp
+CMakeFiles/main.dir/src/csc_cumsum.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_cumsum.cpp.o: /home/zbh/Desktop/Matrix/src/csc_cumsum.cpp
+CMakeFiles/main.dir/src/csc_cumsum.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/csc_cumsum.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_cumsum.cpp.o -MF CMakeFiles/main.dir/src/csc_cumsum.cpp.o.d -o CMakeFiles/main.dir/src/csc_cumsum.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_cumsum.cpp
 
-CMakeFiles/main.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+CMakeFiles/main.dir/src/csc_cumsum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_cumsum.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_cumsum.cpp > CMakeFiles/main.dir/src/csc_cumsum.cpp.i
 
-CMakeFiles/main.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
+CMakeFiles/main.dir/src/csc_cumsum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_cumsum.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_cumsum.cpp -o CMakeFiles/main.dir/src/csc_cumsum.cpp.s
+
+CMakeFiles/main.dir/src/csc_duplicate.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_duplicate.cpp.o: /home/zbh/Desktop/Matrix/src/csc_duplicate.cpp
+CMakeFiles/main.dir/src/csc_duplicate.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/csc_duplicate.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_duplicate.cpp.o -MF CMakeFiles/main.dir/src/csc_duplicate.cpp.o.d -o CMakeFiles/main.dir/src/csc_duplicate.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_duplicate.cpp
+
+CMakeFiles/main.dir/src/csc_duplicate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_duplicate.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_duplicate.cpp > CMakeFiles/main.dir/src/csc_duplicate.cpp.i
+
+CMakeFiles/main.dir/src/csc_duplicate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_duplicate.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_duplicate.cpp -o CMakeFiles/main.dir/src/csc_duplicate.cpp.s
+
+CMakeFiles/main.dir/src/csc_memory.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_memory.cpp.o: /home/zbh/Desktop/Matrix/src/csc_memory.cpp
+CMakeFiles/main.dir/src/csc_memory.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/csc_memory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_memory.cpp.o -MF CMakeFiles/main.dir/src/csc_memory.cpp.o.d -o CMakeFiles/main.dir/src/csc_memory.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_memory.cpp
+
+CMakeFiles/main.dir/src/csc_memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_memory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_memory.cpp > CMakeFiles/main.dir/src/csc_memory.cpp.i
+
+CMakeFiles/main.dir/src/csc_memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_memory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_memory.cpp -o CMakeFiles/main.dir/src/csc_memory.cpp.s
+
+CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o: /home/zbh/Desktop/Matrix/src/csc_sm_fkeep.cpp
+CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o -MF CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o.d -o CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_sm_fkeep.cpp
+
+CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_sm_fkeep.cpp > CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.i
+
+CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_sm_fkeep.cpp -o CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.s
+
+CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o: /home/zbh/Desktop/Matrix/src/csc_sm_gaxpy.cpp
+CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o -MF CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o.d -o CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_sm_gaxpy.cpp
+
+CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_sm_gaxpy.cpp > CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.i
+
+CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_sm_gaxpy.cpp -o CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.s
 
 CMakeFiles/main.dir/src/csc_smatrix.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/csc_smatrix.cpp.o: /home/zbh/Desktop/Matrix/src/csc_smatrix.cpp
 CMakeFiles/main.dir/src/csc_smatrix.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/csc_smatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/csc_smatrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_smatrix.cpp.o -MF CMakeFiles/main.dir/src/csc_smatrix.cpp.o.d -o CMakeFiles/main.dir/src/csc_smatrix.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_smatrix.cpp
 
 CMakeFiles/main.dir/src/csc_smatrix.cpp.i: cmake_force
@@ -97,10 +153,38 @@ CMakeFiles/main.dir/src/csc_smatrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_smatrix.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_smatrix.cpp -o CMakeFiles/main.dir/src/csc_smatrix.cpp.s
 
+CMakeFiles/main.dir/src/csc_transpose.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/csc_transpose.cpp.o: /home/zbh/Desktop/Matrix/src/csc_transpose.cpp
+CMakeFiles/main.dir/src/csc_transpose.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/csc_transpose.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/csc_transpose.cpp.o -MF CMakeFiles/main.dir/src/csc_transpose.cpp.o.d -o CMakeFiles/main.dir/src/csc_transpose.cpp.o -c /home/zbh/Desktop/Matrix/src/csc_transpose.cpp
+
+CMakeFiles/main.dir/src/csc_transpose.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/csc_transpose.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/csc_transpose.cpp > CMakeFiles/main.dir/src/csc_transpose.cpp.i
+
+CMakeFiles/main.dir/src/csc_transpose.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/csc_transpose.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/csc_transpose.cpp -o CMakeFiles/main.dir/src/csc_transpose.cpp.s
+
+CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/main.cpp.o: /home/zbh/Desktop/Matrix/src/main.cpp
+CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /home/zbh/Desktop/Matrix/src/main.cpp
+
+CMakeFiles/main.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zbh/Desktop/Matrix/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+
+CMakeFiles/main.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zbh/Desktop/Matrix/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
+
 CMakeFiles/main.dir/src/triple_smatrix.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/triple_smatrix.cpp.o: /home/zbh/Desktop/Matrix/src/triple_smatrix.cpp
 CMakeFiles/main.dir/src/triple_smatrix.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/triple_smatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/triple_smatrix.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/triple_smatrix.cpp.o -MF CMakeFiles/main.dir/src/triple_smatrix.cpp.o.d -o CMakeFiles/main.dir/src/triple_smatrix.cpp.o -c /home/zbh/Desktop/Matrix/src/triple_smatrix.cpp
 
 CMakeFiles/main.dir/src/triple_smatrix.cpp.i: cmake_force
@@ -113,19 +197,31 @@ CMakeFiles/main.dir/src/triple_smatrix.cpp.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/main.cpp.o" \
+"CMakeFiles/main.dir/src/csc_cumsum.cpp.o" \
+"CMakeFiles/main.dir/src/csc_duplicate.cpp.o" \
+"CMakeFiles/main.dir/src/csc_memory.cpp.o" \
+"CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o" \
+"CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o" \
 "CMakeFiles/main.dir/src/csc_smatrix.cpp.o" \
+"CMakeFiles/main.dir/src/csc_transpose.cpp.o" \
+"CMakeFiles/main.dir/src/main.cpp.o" \
 "CMakeFiles/main.dir/src/triple_smatrix.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/main.cpp.o
+main: CMakeFiles/main.dir/src/csc_cumsum.cpp.o
+main: CMakeFiles/main.dir/src/csc_duplicate.cpp.o
+main: CMakeFiles/main.dir/src/csc_memory.cpp.o
+main: CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o
+main: CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o
 main: CMakeFiles/main.dir/src/csc_smatrix.cpp.o
+main: CMakeFiles/main.dir/src/csc_transpose.cpp.o
+main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/src/triple_smatrix.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zbh/Desktop/Matrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
