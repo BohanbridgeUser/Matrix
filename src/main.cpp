@@ -181,5 +181,21 @@ int main(int argv, char* argc[])
     std::cout << "Transpose test1:\n";
     CSC_SMatrix csct = csc.csc_transpose();
     std::cout << csct << std::endl;
+
+    std::cout << "Transpose test2:\n";
+    CSC_SMatrix csct2 = csc2.csc_transpose();
+    std::cout << csct2 << std::endl;
+
+    std::cout << "Transpose test3:\n";
+    CSC_SMatrix csct3 = csc3.csc_transpose();
+    std::cout << csct3 << std::endl;
+
+    std::cout << "Transpose test4:\n";
+    CSC_SMatrix csct4 = csc4.csc_transpose();
+    std::cout << csct4 << std::endl;
+
+    std::cout << "Transpose test5:\n";
+    CSC_SMatrix csct5 = csc5.csc_transpose();
+    std::cout << csct5 << std::endl;
     return 0;
 }

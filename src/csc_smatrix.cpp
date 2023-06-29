@@ -47,11 +47,11 @@ CSC_SMatrix::CSC_SMatrix(const CSC_SMatrix& A):nentries(A.nentries),nrow(A.nrow)
 CSC_SMatrix::CSC_SMatrix(CSC_SMatrix&& A):nentries(A.nentries),nrow(A.nrow),ncol(A.ncol)
 {
     pcol = A.pcol;
-    A.pcol = nullptr;
+    A.pcol = NULL;
     irow = A.irow;
-    A.irow = nullptr;
+    A.irow = NULL;
     value = A.value;
-    A.value = nullptr;
+    A.value = NULL;
 }
 bool CSC_SMatrix::empty()const
 {
@@ -182,7 +182,7 @@ CSC_SMatrix CSC_SMatrix::csc_transpose()
 {
     smi *Cp,*Ci,*Cx;
     if (empty()) return CSC_SMatrix();
-    CSC_SMatrix ret(nrow,ncol,nentries);
+    CSC_SMatrix ret(ncol,nrow,nentries);
     smi* p = (smi*)sm_calloc(nrow,sizeof(smi));
     for (int i=0;i<nentries;++i) p[irow[i]]++;
     csc_cumsum(ret.pcol,p,nrow);
