@@ -7,7 +7,7 @@ CSC_SMatrix::CSC_SMatrix():nentries(0),nrow(0),ncol(0),pcol(nullptr),irow(nullpt
 CSC_SMatrix::CSC_SMatrix(const int row, const int col, const int ne):nentries(ne),nrow(row),ncol(col)
 {
     pcol = (smi*)sm_calloc(col+1,sizeof(smi));
-    irow = (smi*)sm_calloc(row,sizeof(smi));
+    irow = (smi*)sm_calloc(ne,sizeof(smi));
     value = (double*)sm_calloc(ne,sizeof(double));
 }
 CSC_SMatrix::CSC_SMatrix(const Triple_SMatrix& A)
@@ -32,6 +32,26 @@ CSC_SMatrix::CSC_SMatrix(const Triple_SMatrix& A)
         }
         pcol[j] = count;
     }
+}
+CSC_SMatrix::CSC_SMatrix(const CSC_SMatrix& A):nentries(A.nentries),nrow(A.nrow),ncol(A.ncol)
+{
+    pcol = (smi*)sm_calloc(ncol+1,sizeof(smi));
+    irow = (smi*)sm_calloc(nentries,sizeof(smi));
+    value = (double*)sm_calloc(nentries,sizeof(double));
+    for (int i=0;i<ncol+1;++i) pcol[i] = A.pcol[i];
+    for (int i=0;i<nentries;++i) {
+        irow[i] = A.irow[i];
+        value[i] = A.value[i];
+    }
+}
+CSC_SMatrix::CSC_SMatrix(CSC_SMatrix&& A):nentries(A.nentries),nrow(A.nrow),ncol(A.ncol)
+{
+    pcol = A.pcol;
+    A.pcol = nullptr;
+    irow = A.irow;
+    A.irow = nullptr;
+    value = A.value;
+    A.value = nullptr;
 }
 bool CSC_SMatrix::empty()const
 {

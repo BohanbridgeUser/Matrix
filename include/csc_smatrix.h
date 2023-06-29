@@ -21,6 +21,8 @@ class CSC_SMatrix{
         CSC_SMatrix();
         CSC_SMatrix(const int row, const int col, const int ne);
         CSC_SMatrix(const Triple_SMatrix& A);
+        CSC_SMatrix(const CSC_SMatrix& A);
+        CSC_SMatrix(CSC_SMatrix&& A);
         CSC_SMatrix(const smi& ne, smi* rows, smi* cols, double* values);
         ~CSC_SMatrix();
 
