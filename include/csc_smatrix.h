@@ -27,11 +27,11 @@ class CSC_SMatrix{
         ~CSC_SMatrix();
 
         /* Memory */
-        void* sm_malloc(smi i, size_t size)const;
-        void* sm_calloc(smi i, size_t size)const;
-        void sm_free(void* p)const;
-        void* sm_realloc(void* p, size_t size);
-        bool sm_sprealloc();
+        friend void* sm_malloc(smi i, size_t size);
+        friend void* sm_calloc(smi i, size_t size);
+        friend void sm_free(void* p);
+        friend void* sm_realloc(void* p, size_t size);
+        bool sm_sprealloc(const smi& ne);
         //CSC_SMatrix* sm_smalloc(const smi& nr, const smi& nc, const smi& ne, const smi& values);
         //CSC_SMatrix* sm_resmalloc(CSC_SMatrix& A, const smi& ne);
 
@@ -39,13 +39,19 @@ class CSC_SMatrix{
         double* sm_gaxpy(const double* x, const double* y = nullptr)const;
         CSC_SMatrix csc_transpose();
         CSC_SMatrix csc_sort();
+        smi csc_scatter(smi j, const double& beta, smi* w, double* x, smi mark, CSC_SMatrix& C, smi ne)const;
+        CSC_SMatrix csc_multiply(const CSC_SMatrix& another);
+        friend CSC_SMatrix csc_add(const CSC_SMatrix& A, const CSC_SMatrix& B, const double& alph, const double& beta);
         // friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
         //                     const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
         
         /* Utilization */
-        int cols()const;
-        int rows()const;
-        int entries()const;
+        smi cols()const;
+        smi rows()const;
+        smi entries()const;
+        smi& cols();
+        smi& rows();
+        smi& entries();
         CSC_SMatrix csc_duplicate();
         double csc_cumsum(int* p, int* c, int n);
         bool csc_sm_fkeep(bool(*fkeep)(int ,int, double, void*), void* other);
@@ -54,5 +60,8 @@ class CSC_SMatrix{
         double operator()(const smi& i, const smi& j)const;
         friend std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc);
 };
-
+void* sm_malloc(smi i, size_t size);
+void* sm_calloc(smi i, size_t size);
+void sm_free(void* p);
+void* sm_realloc(void* p, size_t size);
 #endif

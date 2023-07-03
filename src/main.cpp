@@ -66,11 +66,12 @@ int main(int argv, char* argc[])
     std::cout << "Matrix4:\n";
     ent = 5;
     smi c4[] = {3,4,4,4,5};
-    smi r4[] = {1,1,2,3,2};
-    double v4[] = {1,2,3,5,8};
+    smi r4[] = {1,1,2,3,1};
+    double v4[] = {1,2,5,8,3};
     Triple_SMatrix tm4(ent,r4,c4,v4);
     std::cout << tm4;
     CSC_SMatrix csc4(tm4);
+    CSC_SMatrix csc4_1(tm4);
     std::cout << csc4;
 
     /*
@@ -88,6 +89,7 @@ int main(int argv, char* argc[])
     Triple_SMatrix tm5(ent,r5,c5,v5);
     std::cout << tm5;
     CSC_SMatrix csc5(tm5);
+    CSC_SMatrix csc5_1(tm5);
     std::cout << csc5;
 
     /* Random accese test */
@@ -138,7 +140,7 @@ int main(int argv, char* argc[])
         std::cout << t[i] << ' ';
     }
     std::cout << std::endl;
-    csc.sm_free(t);
+    sm_free(t);
     std::cout << "Gaxpy test2:\n";
     double x2[] = {10};
     double y2[] = {30,20,15,23,13,20};
@@ -147,7 +149,7 @@ int main(int argv, char* argc[])
         std::cout << t[i] << ' ';
     }
     std::cout << std::endl;
-    csc.sm_free(t);
+    sm_free(t);
     std::cout << "Gaxpy test3:\n";
     double x3[] = {10,11,18,19,20,21,22};
     double y3[] = {30};
@@ -156,7 +158,7 @@ int main(int argv, char* argc[])
         std::cout << t[i] << ' ';
     }
     std::cout << std::endl;
-    csc.sm_free(t);
+    sm_free(t);
     std::cout << "Gaxpy test4:\n";
     double x4[] = {10,11,18,19,20,21};
     double y4[] = {30,23,42,35};
@@ -165,7 +167,7 @@ int main(int argv, char* argc[])
         std::cout << t[i] << ' ';
     }
     std::cout << std::endl;
-    csc.sm_free(t);
+    sm_free(t);
     std::cout << "Gaxpy test5:\n";
     double x5[] = {10,11,18,19,20,21};
     double y5[] = {30,23,42,35};
@@ -173,7 +175,7 @@ int main(int argv, char* argc[])
     for (int i=0;i<csc5.rows();++i) {
         std::cout << t[i] << ' ';
     }
-    csc.sm_free(t);
+    sm_free(t);
     std::cout << std::endl;
 
     /* Transpose test */
@@ -198,8 +200,50 @@ int main(int argv, char* argc[])
     CSC_SMatrix csct5 = csc5.csc_transpose();
     std::cout << csct5 << std::endl;
 
-    std::cout << "Transpose test5:\n";
+    std::cout << "Sort test6:\n";
     CSC_SMatrix csct6 = csc5.csc_sort();
     std::cout << csct6 << std::endl;
+
+    /* Multiply test */
+    std::cout << "*************Multiply test*******************\n"; 
+    std::cout << "Multiply test1:\n";
+    CSC_SMatrix csct7 = csc.csc_multiply(csc2);
+    std::cout << csct7 << std::endl;
+
+    std::cout << "Multiply test2:\n";
+    std::cout << "Matrix6:\n";
+    ent = 12;
+    smi c7[] = {1,1,1,2,2,2,2,3,3,4,4,4};
+    smi r7[] = {0,2,4,0,1,3,4,2,3,0,2,3};
+    double v7[] = {1,3,5,2,2,4,4,1,2,1,1,2};
+    Triple_SMatrix tm7(ent,r7,c7,v7);
+    std::cout << tm7;
+    CSC_SMatrix csc7(tm7);
+    std::cout << csc7;
+
+    std::cout << "Matrix7:\n";
+    ent = 7;
+    smi c8[] = {0,0,0,0,2,2,2};
+    smi r8[] = {0,1,3,4,0,1,3};
+    double v8[] = {1,3,5,7,7,9,5};
+    Triple_SMatrix tm8(ent,r8,c8,v8);
+    std::cout << tm8;
+    CSC_SMatrix csc8(tm8);
+    std::cout << csc8;
+
+    std::cout << "M7*M8:\n";
+    CSC_SMatrix cscm = csc7.csc_multiply(csc8);
+    std::cout << cscm << std::endl;
+    std::cout << cscm.csc_sort() << std::endl;
+
+    /* Add test */
+    std::cout << "*************Add test*******************\n"; 
+    std::cout << "Add test1:\n";
+    CSC_SMatrix addm = csc_add(csc4_1,csc5_1,1,1);
+    std::cout <<"csc4_1:\n" << csc4_1 << std::endl;
+    std::cout << csc5_1 << std::endl;
+    std::cout << addm << std::endl;
+    std::cout << addm.csc_sort() << std::endl;
+    
     return 0;
 }

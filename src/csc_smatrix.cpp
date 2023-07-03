@@ -63,15 +63,27 @@ CSC_SMatrix::~CSC_SMatrix()
     sm_free(irow);
     sm_free(value);
 }
-int CSC_SMatrix::cols()const
+smi CSC_SMatrix::cols()const
 {
     return ncol;
 }
-int CSC_SMatrix::rows()const
+smi CSC_SMatrix::rows()const
 {
     return nrow;
 }
-int CSC_SMatrix::entries()const
+smi CSC_SMatrix::entries()const
+{
+    return nentries;
+}
+smi& CSC_SMatrix::cols()
+{
+    return ncol;
+}
+smi& CSC_SMatrix::rows()
+{
+    return nrow;
+}
+smi& CSC_SMatrix::entries()
 {
     return nentries;
 }

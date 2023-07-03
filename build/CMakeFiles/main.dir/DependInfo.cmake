@@ -8,9 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/zbh/Desktop/Matrix/src/csc_add.cpp" "CMakeFiles/main.dir/src/csc_add.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_add.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_cumsum.cpp" "CMakeFiles/main.dir/src/csc_cumsum.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_cumsum.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_duplicate.cpp" "CMakeFiles/main.dir/src/csc_duplicate.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_duplicate.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_memory.cpp" "CMakeFiles/main.dir/src/csc_memory.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_memory.cpp.o.d"
+  "/home/zbh/Desktop/Matrix/src/csc_multiply.cpp" "CMakeFiles/main.dir/src/csc_multiply.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_multiply.cpp.o.d"
+  "/home/zbh/Desktop/Matrix/src/csc_scatter.cpp" "CMakeFiles/main.dir/src/csc_scatter.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_scatter.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_sm_fkeep.cpp" "CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_sm_fkeep.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_sm_gaxpy.cpp" "CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_sm_gaxpy.cpp.o.d"
   "/home/zbh/Desktop/Matrix/src/csc_smatrix.cpp" "CMakeFiles/main.dir/src/csc_smatrix.cpp.o" "gcc" "CMakeFiles/main.dir/src/csc_smatrix.cpp.o.d"

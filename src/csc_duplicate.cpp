@@ -22,6 +22,6 @@ CSC_SMatrix CSC_SMatrix::csc_duplicate()
     }
     pcol[ncol] = nz;
     sm_free(w);
-    this->sm_sprealloc();
+    this->sm_sprealloc(0);
     return *this;
 }

@@ -16,7 +16,7 @@ bool CSC_SMatrix::csc_sm_fkeep(bool(*fkeep)(int, int, double, void*), void* othe
     }
     nentries = nz;
     pcol[i] = nz;
-    sm_sprealloc();
+    sm_sprealloc(0);
     return true;
 }
 bool csc_nonzero(int i, int j, double aij, void* other)

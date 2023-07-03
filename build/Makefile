@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/csc_add.o: src/csc_add.cpp.o
+.PHONY : src/csc_add.o
+
+# target to build an object file
+src/csc_add.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_add.cpp.o
+.PHONY : src/csc_add.cpp.o
+
+src/csc_add.i: src/csc_add.cpp.i
+.PHONY : src/csc_add.i
+
+# target to preprocess a source file
+src/csc_add.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_add.cpp.i
+.PHONY : src/csc_add.cpp.i
+
+src/csc_add.s: src/csc_add.cpp.s
+.PHONY : src/csc_add.s
+
+# target to generate assembly for a file
+src/csc_add.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_add.cpp.s
+.PHONY : src/csc_add.cpp.s
+
 src/csc_cumsum.o: src/csc_cumsum.cpp.o
 .PHONY : src/csc_cumsum.o
 
@@ -200,6 +224,54 @@ src/csc_memory.s: src/csc_memory.cpp.s
 src/csc_memory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_memory.cpp.s
 .PHONY : src/csc_memory.cpp.s
+
+src/csc_multiply.o: src/csc_multiply.cpp.o
+.PHONY : src/csc_multiply.o
+
+# target to build an object file
+src/csc_multiply.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_multiply.cpp.o
+.PHONY : src/csc_multiply.cpp.o
+
+src/csc_multiply.i: src/csc_multiply.cpp.i
+.PHONY : src/csc_multiply.i
+
+# target to preprocess a source file
+src/csc_multiply.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_multiply.cpp.i
+.PHONY : src/csc_multiply.cpp.i
+
+src/csc_multiply.s: src/csc_multiply.cpp.s
+.PHONY : src/csc_multiply.s
+
+# target to generate assembly for a file
+src/csc_multiply.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_multiply.cpp.s
+.PHONY : src/csc_multiply.cpp.s
+
+src/csc_scatter.o: src/csc_scatter.cpp.o
+.PHONY : src/csc_scatter.o
+
+# target to build an object file
+src/csc_scatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_scatter.cpp.o
+.PHONY : src/csc_scatter.cpp.o
+
+src/csc_scatter.i: src/csc_scatter.cpp.i
+.PHONY : src/csc_scatter.i
+
+# target to preprocess a source file
+src/csc_scatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_scatter.cpp.i
+.PHONY : src/csc_scatter.cpp.i
+
+src/csc_scatter.s: src/csc_scatter.cpp.s
+.PHONY : src/csc_scatter.s
+
+# target to generate assembly for a file
+src/csc_scatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/csc_scatter.cpp.s
+.PHONY : src/csc_scatter.cpp.s
 
 src/csc_sm_fkeep.o: src/csc_sm_fkeep.cpp.o
 .PHONY : src/csc_sm_fkeep.o
@@ -354,6 +426,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/csc_add.o"
+	@echo "... src/csc_add.i"
+	@echo "... src/csc_add.s"
 	@echo "... src/csc_cumsum.o"
 	@echo "... src/csc_cumsum.i"
 	@echo "... src/csc_cumsum.s"
@@ -363,6 +438,12 @@ help:
 	@echo "... src/csc_memory.o"
 	@echo "... src/csc_memory.i"
 	@echo "... src/csc_memory.s"
+	@echo "... src/csc_multiply.o"
+	@echo "... src/csc_multiply.i"
+	@echo "... src/csc_multiply.s"
+	@echo "... src/csc_scatter.o"
+	@echo "... src/csc_scatter.i"
+	@echo "... src/csc_scatter.s"
 	@echo "... src/csc_sm_fkeep.o"
 	@echo "... src/csc_sm_fkeep.i"
 	@echo "... src/csc_sm_fkeep.s"
