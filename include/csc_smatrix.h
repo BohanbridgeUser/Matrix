@@ -42,9 +42,13 @@ class CSC_SMatrix{
         smi csc_scatter(smi j, const double& beta, smi* w, double* x, smi mark, CSC_SMatrix& C, smi ne)const;
         CSC_SMatrix csc_multiply(const CSC_SMatrix& another);
         friend CSC_SMatrix csc_add(const CSC_SMatrix& A, const CSC_SMatrix& B, const double& alph, const double& beta);
-        // friend void scatter(const CSC_SMatrix& oriM, const smi& colj, smi* record, smi* result_col, 
-        //                     const smi& mark, CSC_SMatrix& objectM, smi& rowindex);
-        
+        friend smi* csc_pvec(const smi* p, smi* x, smi* b, smi& n);
+        friend smi* csc_ipvec(const smi* p, smi* x, smi* b, smi& n);
+        friend smi* csc_pinv(const smi* p, smi n);
+        CSC_SMatrix csc_permutation(const smi* pinv, const smi* q);
+        CSC_SMatrix csc_sympvem(const smi* pinv)const;
+        double csc_norm();
+
         /* Utilization */
         smi cols()const;
         smi rows()const;
@@ -64,4 +68,6 @@ void* sm_malloc(smi i, size_t size);
 void* sm_calloc(smi i, size_t size);
 void sm_free(void* p);
 void* sm_realloc(void* p, size_t size);
+smi* csc_pvec(const smi* p, smi* x, smi* b, smi& n);
+smi* csc_ipvec(const smi* p, smi* x, smi* b, smi& n);
 #endif

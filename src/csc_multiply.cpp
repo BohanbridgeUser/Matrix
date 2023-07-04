@@ -30,5 +30,7 @@ CSC_SMatrix CSC_SMatrix::csc_multiply(const CSC_SMatrix& another)
     }
     C.pcol[another.cols()] = nz;
     C.sm_sprealloc(0);
+    sm_free(w);
+    sm_free(x);
     return C;
 }

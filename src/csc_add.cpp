@@ -20,5 +20,7 @@ CSC_SMatrix csc_add(const CSC_SMatrix& A, const CSC_SMatrix& B, const double& al
     C.pcol[A.cols()] = nz;
     std::cout << C << std::endl;
     C.sm_sprealloc(0);
+    sm_free(w);
+    sm_free(x);
     return C;
 }
