@@ -48,6 +48,8 @@ class CSC_SMatrix{
         CSC_SMatrix csc_permutation(const smi* pinv, const smi* q);
         CSC_SMatrix csc_sympvem(const smi* pinv)const;
         double csc_norm();
+        double* csc_lsolve(double* b)const;
+        double* csc_ltsolve(double* b)const;
 
         /* Utilization */
         smi cols()const;
