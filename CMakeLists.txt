@@ -2,6 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.20)
 
 PROJECT(MATRIX)
 SET(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -fopenmp-simd -g -O3 -ftree-vectorize -fopt-info-vec-missed")
 INCLUDE_DIRECTORIES(./include)
 AUX_SOURCE_DIRECTORY(./src SRC_LIST)
 

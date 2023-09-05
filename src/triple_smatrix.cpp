@@ -28,15 +28,15 @@ std::ostream& operator<<(std::ostream& os, const Triple_SMatrix& tm)
     os << "Triple_Matrix:\n";
     os << "Cols = " << tm.ncol << " Row = " << tm.nrow << " Entries = " << tm.nentries << std::endl;
     os << "Col:   ";
-    for (int i=0;i<tm.nentries;++i) {
+    for (int i=0;i<tm.nentries && i < 20;++i) {
         os << tm.col[i] << ' ';
     }
     os << "\nRow:   ";
-    for (int i=0;i<tm.nentries;++i) {
+    for (int i=0;i<tm.nentries && i < 20;++i) {
         os << tm.row[i] << ' ';
     }
     os << "\nValue: ";
-    for (int i=0;i<tm.nentries;++i) {
+    for (int i=0;i<tm.nentries && i < 20;++i) {
         os << tm.value[i] << ' ';
     }
     os << endl;

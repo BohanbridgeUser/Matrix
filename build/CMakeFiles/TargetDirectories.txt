@@ -1,3 +1,0 @@
-/home/zbh/Desktop/Matrix/build/CMakeFiles/main.dir
-/home/zbh/Desktop/Matrix/build/CMakeFiles/edit_cache.dir
-/home/zbh/Desktop/Matrix/build/CMakeFiles/rebuild_cache.dir

@@ -8,7 +8,7 @@ CSC_SMatrix csc_add(const CSC_SMatrix& A, const CSC_SMatrix& B, const double& al
     }
     CSC_SMatrix C(A.rows(),A.cols(),A.entries()+B.entries());
     smi *w = (smi*)sm_calloc(A.rows(),sizeof(smi));
-    double *x = (double*)sm_calloc(A.rows(),sizeof(smi));
+    double *x = (double*)sm_calloc(A.rows(),sizeof(double));
     smi nz = 0;
     std::cout << A.cols() <<std::endl;
     for (smi p=0;p<A.cols();++p) {

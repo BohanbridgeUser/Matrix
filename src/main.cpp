@@ -1,6 +1,9 @@
 #include "../include/triple_smatrix.h"
 #include "../include/csc_smatrix.h"
 #include <iostream>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
 
 int main(int argv, char* argc[])
 {
@@ -12,7 +15,7 @@ int main(int argv, char* argc[])
             0 1 0 0 0 3
             0 0 0 1 0 4
     */
-   std::cout << "*************Constructor test*******************\n"; 
+    std::cout << "*************Constructor test*******************\n"; 
     std::cout << "Matrix1:\n";
     smi ent = 12;
     smi c[] = {1,1,1,2,2,2,3,3,3,5,5,5};
@@ -239,11 +242,138 @@ int main(int argv, char* argc[])
     /* Add test */
     std::cout << "*************Add test*******************\n"; 
     std::cout << "Add test1:\n";
-    CSC_SMatrix addm = csc_add(csc4_1,csc5_1,1,1);
     std::cout <<"csc4_1:\n" << csc4_1 << std::endl;
-    std::cout << csc5_1 << std::endl;
+    std::cout << csc5_1 << std::endl; 
+    CSC_SMatrix addm = csc_add(csc4_1,csc5_1,1,1);
     std::cout << addm << std::endl;
     std::cout << addm.csc_sort() << std::endl;
     
+    // /* 1138_bus matrix test 4054 nonzeros */
+    // using namespace std;
+    // std::cout << "*************1138_bus matrix test*******************\n"; 
+    // std::cout << "1138_bus matrix:\n";
+    // std::fstream file;
+    // file.open("G:/COMPUTER/VS_Matrix/Matrix/example/1138_bus/1138_bus.mtx", std::ios::in);
+    // if (file.is_open()) std::cout << "file opened!\n";
+    // smi rn = 0;
+    // char str[100];
+    // while (rn != 13 && file.getline(str, 100)) {
+    //     rn++;
+    //     cout << str << endl;
+    // }
+    // std::cout << str << std::endl;
+
+    // smi rows, cols, values;
+    // file >> rows >> cols >> values;
+    // smi* c11 = (smi*)calloc(values, sizeof(smi));
+    // smi* r11 = (smi*)calloc(values, sizeof(smi));
+    // double* v11 = (double*)calloc(values, sizeof(double));
+    // for (smi i = 0; i < values; ++i) {
+    //     file >> r11[i];
+    //     file >> c11[i];
+    //     file >> v11[i];
+    // }
+    // /*for (smi i = 0; i < values; ++i) {
+    //     cout << c11[i]-- << ' ';
+    //     cout << r11[i]-- << ' ';
+    //     cout << v11[i] << endl;
+    // }*/
+    // Triple_SMatrix tm11(values, r11, c11, v11);
+    // //std::cout << tm11;
+    // CSC_SMatrix csc11(tm11);
+    // //std::cout << csc11;
+
+    // // fstream ofile;
+    // // ofile.open("cpp1138.txt",ios::out);
+    // // if (ofile.is_open()) cout << 1 << endl;
+    // // output(ofile,csc11);
+    // double* x12 = (double*)calloc(rows,sizeof(double));
+    // double* y12 = (double*)calloc(rows,sizeof(double));
+
+    // #pragma omp parallel for
+    // for (smi i=0;i<rows;++i) x12 [i] = 2, y12[i] = 3;
+
+    // clock_t tbegin = 0,tend = 0;
+    // tbegin = clock();
+    // printf("%lfd\n",tbegin);
+    // double* r12;
+    // for (smi i=0;i<1e3;++i) 
+    //     r12 = csc11.sm_gaxpy(x12,y12);
+    // tend = clock();
+
+    // //for (smi i=0;i<rows;++i) std::cout << r12[i] <<' ';
+    // std::cout << "\ntbegin :" << tbegin  <<std::endl;
+    // std::cout << "tend :" << tend  << std::endl;
+    // std::cout <<  tend - tbegin << std::endl;
+
+
+    /* mawi_201512020330 matrix test 4054 nonzeros */
+    // @ Input Matrix{
+    using namespace std;
+    std::cout << "*************Goodwin_030 matrix test*******************\n"; 
+    std::cout << "Goodwin_030 matrix:\n";
+    std::fstream file;
+    file.open("G:/COMPUTER/Matrix/example_matrix/Goodwin_030/Goodwin_030.mtx", std::ios::in);
+    if (file.is_open()) std::cout << "file opened!\n";
+    else std::cout << "Failed Open file\n";
+    smi rn = 0;
+    char str[100];
+    while (rn != 17 && file.getline(str, 100)) {
+        rn++;
+        cout << str << endl;
+    }
+    std::cout << str << std::endl;
+    smi rows, cols, values;
+    file >> rows >> cols >> values;
+    smi* c11 = (smi*)calloc(values, sizeof(smi));
+    smi* r11 = (smi*)calloc(values, sizeof(smi));
+    double* v11 = (double*)calloc(values, sizeof(double));
+    for (smi i = 0; i < values; ++i) {
+        file >> r11[i];
+        file >> c11[i];
+        file >> v11[i];
+        r11[i]--;
+        c11[i]--;
+    }
+    Triple_SMatrix tm11(values, r11, c11, v11);
+    std::cout << tm11;
+    CSC_SMatrix csc11(tm11);
+    std::cout << csc11;
+    // }
+
+    // @ Output Matrix Check Sparse Matrix { 
+    fstream ofile1;
+    ofile1.open("../matlab/Goodwin_030cpp.txt",ios::out);
+    if (ofile1.is_open()) cout << 1 << endl;
+    output(ofile1,csc11);
+    ofile1.close();
+    //}
+
+    // @ Algebra Operation { 
+    // @ Initialization
+    double* x12 = (double*)calloc(rows,sizeof(double));
+    double* y12 = (double*)calloc(rows,sizeof(double));
+    #pragma omp parallel for
+    for (smi i=0;i<rows;++i) x12 [i] = 2, y12[i] = 3;
+
+    // @ Operation
+    clock_t tbegin = 0,tend = 0;
+    tbegin = clock();
+    double* r12;
+    for (smi i=0;i<1e4;++i) 
+        r12 = csc11.sm_gaxpy(x12,y12); 
+     
+    tend = clock();
+    std::cout << "\ntbegin :" << tbegin  <<std::endl;
+    std::cout << "tend :" << tend  << std::endl;
+    std::cout <<  tend - tbegin << std::endl;
+
+    // Output Result
+    fstream ofile;
+    ofile.open("../matlab/cppGoodwin_030.txt",ios::out);
+    if (ofile.is_open()) cout << "File opened!\n";
+    else cout << "Failed open file!\n";
+    for (smi i=0;i<rows;++i) ofile << fixed << std::setprecision(8) << r12[i] << endl;
+    // }
     return 0;
 }

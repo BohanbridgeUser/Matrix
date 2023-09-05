@@ -26,8 +26,7 @@ CSC_SMatrix::CSC_SMatrix(const Triple_SMatrix& A)
         temp = A.col[i];
         while (temp == A.col[i] && i < nentries){
             irow[k] = A.row[i];
-            value[k] = A.value[i];
-            i++,k++;
+            value[k++] = A.value[i++];
             count++;
         }
         pcol[j] = count;
@@ -92,15 +91,15 @@ std::ostream& operator<<(std::ostream& os, const CSC_SMatrix& csc)
     using namespace std;
     os << "CSC_Matrix:\n";
     os << "Pcol:  ";
-    for (int i=0;i<csc.ncol+1;++i) {
+    for (int i=0;i<csc.ncol+1&&i<20;++i) {
         os << csc.pcol[i] << ' ';
     }
     os << "\nRow:   ";
-    for (int i=0;i<csc.nentries;++i) {
+    for (int i=0;i<csc.nentries&& i<20;++i) {
         os << csc.irow[i] << ' ';
     }
     os << "\nValue: ";
-    for (int i=0;i<csc.nentries;++i) {
+    for (int i=0;i<csc.nentries&& i< 20;++i) {
         os << csc.value[i] << ' ';
     }
     os << endl;
@@ -122,4 +121,13 @@ double CSC_SMatrix::operator()(const smi& i, const smi& j)const
     }
 }
 
-
+std::fstream& output(std::fstream& os, const CSC_SMatrix& csc)
+{
+    using namespace std;
+    for (smi i = 0; i < csc.ncol; ++i) {
+        for (smi p = csc.pcol[i]; p < csc.pcol[i + 1]; ++p) {
+            os << i+1 << ' ' << csc.irow[p]+1  << ' ' << fixed << std::setprecision(8) << csc.value[p] << endl;
+        }
+    }
+    return os;
+}
