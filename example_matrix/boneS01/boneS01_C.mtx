@@ -1,0 +1,10 @@
+%%MatrixMarket matrix coordinate pattern general
+%-------------------------------------------------------------------------------
+% UF Sparse Matrix Collection, Tim Davis
+% http://www.cise.ufl.edu/research/sparse/matrices/Oberwolfach/boneS01
+% name: Oberwolfach/boneS01 : C matrix
+%-------------------------------------------------------------------------------
+3 127224 3
+1 1
+2 2
+3 3
